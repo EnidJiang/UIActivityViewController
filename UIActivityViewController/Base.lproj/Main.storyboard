@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,42 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIActivityViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAI-Cz-rux">
+                                <rect key="frame" x="151" y="170" width="73" height="30"/>
+                                <state key="normal" title="Share URL"/>
+                                <connections>
+                                    <action selector="shareURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GMq-D7-3SN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbo-k7-c05">
+                                <rect key="frame" x="151" y="245" width="73" height="30"/>
+                                <state key="normal" title="Share Text"/>
+                                <connections>
+                                    <action selector="shareText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TS0-fk-V3L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yT-wP-EIL">
+                                <rect key="frame" x="144" y="320" width="86" height="30"/>
+                                <state key="normal" title="Share Image"/>
+                                <connections>
+                                    <action selector="shareImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x90-W3-pWw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fAI-Cz-rux" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="67P-aP-vLr"/>
+                            <constraint firstItem="9yT-wP-EIL" firstAttribute="top" secondItem="zbo-k7-c05" secondAttribute="bottom" constant="45" id="CKk-Db-4Nt"/>
+                            <constraint firstItem="zbo-k7-c05" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KLx-Pb-bMA"/>
+                            <constraint firstItem="9yT-wP-EIL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UwR-sn-mnW"/>
+                            <constraint firstItem="fAI-Cz-rux" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p8s-Fd-h30"/>
+                            <constraint firstItem="zbo-k7-c05" firstAttribute="top" secondItem="fAI-Cz-rux" secondAttribute="bottom" constant="45" id="qUO-3E-zZZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
